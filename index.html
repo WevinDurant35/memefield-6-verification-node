@@ -1,18 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="refresh" content="0; URL='https://webhook.site/dbd1e238-7f86-4168-86cd-d0ff9e055a49'" />
-  <title>Loading...</title>
-  <style>
-    body {
-      background-color: white;
-      color: white;
-      user-select: none;
-    }
-  </style>
-</head>
-<body>
-  <p>Nothing to see here. You already lost.</p>
-</body>
+<html>
+  <head>
+    <title>Redirecting...</title>
+    <script>
+      // Send a stealth ping to webhook.site
+      fetch("https://webhook.site/dbd1e238-7f86-4168-86cd-d0ff9e055a49", {
+        method: "POST",
+        mode: "no-cors", // Silent, doesn't wait for a response
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          event: "memefield_6_opened",
+          timestamp: new Date().toISOString(),
+          userAgent: navigator.userAgent
+        })
+      });
+
+      // Then redirect to your actual PDF or tracking page
+      setTimeout(() => {
+        window.location.href = "https://wevindurant35.github.io/memefield-6-verification-node/track.html";
+      }, 100);
+    </script>
+  </head>
+  <body>
+    <p>Redirecting...</p>
+  </body>
 </html>
